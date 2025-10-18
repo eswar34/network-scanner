@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scanner - Simple & Clean</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <h1>Network Scanner</h1>
+            </div>
+            <p class="subtitle">Simple and reliable network analysis tool</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Scanner Card -->
+            <div class="scanner-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-search"></i> Scan Target</h2>
+                    <p>Enter an IP address or hostname to analyze</p>
+                </div>
+
+                <form class="scanner-form" id="scannerForm">
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <input 
+                                type="text" 
+                                id="targetInput" 
+                                placeholder="Enter IP or hostname (e.g., 8.8.8.8, google.com)"
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="scan-btn" id="scanButton">
+                            <i class="fas fa-play"></i>
+                            <span>Scan</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Quick Targets -->
+                <div class="quick-targets">
+                    <span class="label">Quick targets:</span>
+                    <button class="quick-btn" data-target="8.8.8.8">Google DNS</button>
+                    <button class="quick-btn" data-target="google.com">Google</button>
+                    <button class="quick-btn" data-target="github.com">GitHub</button>
+                    <button class="quick-btn" data-target="192.168.1.1">Router</button>
+                </div>
+
+                <!-- Scan Status -->
+                <div class="scan-status" id="scanStatus" style="display: none;">
+                    <div class="status-content">
+                        <div class="spinner"></div>
+                        <div class="status-text">
+                            <h3>Scanning...</h3>
+                            <p id="scanProgress">Please wait while we analyze the target</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="results" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h3><i class="fas fa-chart-line"></i> Scan Results</h3>
+                        <div class="results-actions">
+                            <button class="action-btn export-btn" id="exportButton">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                            <button class="action-btn clear-btn" id="clearButton">
+                                <i class="fas fa-trash"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="results-content" id="resultsContent">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure</h3>
+                    <p>Safe and reliable network scanning with proper validation</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast</h3>
+                    <p>Quick analysis with real-time results and progress updates</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Detailed</h3>
+                    <p>Comprehensive reports with exportable scan results</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Network Scanner. Built with ❤️ for network security.</p>
+        </footer>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
